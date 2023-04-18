@@ -1,0 +1,29 @@
+#{% ... %} is used to executes statements such as for-loops or assign values
+#{{ ... }} prints the results of an expression to the template
+{ #app/views/posts/sample-view.phtml #}
+#pageTitle, showNavigation, menu and post variables are passed to the view#
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ pagetitle}} A Sample Page</title>
+</head>
+<body>
+    {% if true === showNavigation %}
+    <ul id="navigation">
+        {% for item in menu %}
+            <li>
+                <a href='{{ item.href }}'>
+                    {{ item.caption }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <h1>{{ post.pagetitle }}</h1>
+
+    <div class="content">
+        {{ post.content }}
+    </div>
+</body>
+</html>
