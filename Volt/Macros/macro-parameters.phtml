@@ -1,0 +1,18 @@
+{# Parameters can be called by name when passing them #}
+
+{%- macro success_messages(message, field, type) %}
+    <div>
+        <span class='success-type'>{{ type }}</span>
+        <span class='success-field'>{{ field }}</span>
+        <span class='success-message'>{{ message }}</span>
+    </div>
+{%- endmacro %}
+
+{# Call the macro #}
+{{ 
+    success_messages(
+        'type': 'Valid', 
+        'message': 'The request was sent successfully', 
+        'field': 'name'
+    ) 
+}}
